@@ -1,0 +1,39 @@
+employees
+----------------------
+emp_no PK int IDENTITY
+emp_title_id PK int
+birth_date date
+first_name varchar
+last_name varchar
+sex text
+hire_date date
+
+title
+rel - employees.emp_title_id
+----------------------
+title_id int FK
+title varchar
+
+salaries
+rel - employees.emp_no
+----------------------
+emp_no FK int
+salary int
+
+dept_emp
+rel - employees.emp_no
+----------------------
+emp_no FK int
+dept_no PK int
+
+department
+rel - dept_emp.dept_no
+----------------------
+dept_no FK int
+dept_name varchar
+
+dept_manager
+rel - department.dept_no
+----------------------
+dept_no FK int
+emp_no FK int
